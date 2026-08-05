@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>from pendaftaran siswa baru</title>
+        <style>
+            /* CSS sederhana supaya form terlihat rapi */
+            body { font-family: Arial, sans-serif; max-width: 600px; margin;30px auto;padding: 0 20px; }
+            label { display: block; margin-top: 15px; font-weight: bold; }
+            input, select, textarea { width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; }
+            button { margin-top: 20px; padding: 10px 25px; background: #2E6DB4; color white; border: none; border-radius: 4px; cursor: pointer; }
+
+            button:hover { background: #1A3C6E; }
+            .group-radio { display: flex; gap: 20px; margin-top: 5px; }
+            .group-radio label { font-weight: normal; margin-top: 0; }
+        </style>
+    </head>
+    <body>
+
+        <h1>from pendaftaran siswa baru</h1>
+        <p>SMK TELKOM MALANG Tahun pelajaran 2026/2027</p>
+        <hr>
+        
+        <from action="#" method="post">
+
+            <!-- ==== IDENTITAS DIRI ==== -->
+             <H2>A. identitas diri</H2>
+
+             <label for="namalengkap">nama lengkap: *</label>
+             <input type="text" id="namalengkap" name="nama_lengkap"
+             placeholder="tulis nama lengkap sesuai akta"
+             required minlength="3" maxlenght="100">
+
+             <label for="nisn">NISN: *</label>
+             <input type="text" id="nisn" name="nisn"
+             placeholder="10 digit NISN"
+             required pattern="[0-9]{10}"
+             title="NISN harus 10 digit angka">
+
+             <label>jenis kelamin: *</label>
+             <div class="group-radio">
+                <label><input type="radio" name="jenis_kelamin" value="L" required> laki-laki</label>
+                <label><input type="radio" name="jenis_kelamin" value="p">perempuan</label>
+             </div>
+             <label for="tgllahir">tanggal lahir: *</label>
+             <input type="date" id="tgllahir" name="tgl_lahir" required>
+
+             <label for="tempat lahir">tempat lahir:</label>
+             <input type="text" id="tempatlahir" name="tempat-lahir" placeholder="kota kelahiran">
+             
+             <!-- ==== KONTAK ==== -->
+              <h2>B. informasi kontak</h2>
+
+              <label for="email">email aktif:; *</label>
+              <input type="email" id="email" name="email" placeholder="email@gamil.com" required>
+
+              <label for="nohp">nomor hp / whatsapp: *</label>
+              <input type="tel" id="nohp" name="no_hp" placeholder="085xxxxxxxxx" required>
+
+              <label for="alamat">alamat lengkap: *</label>
+              <textarea id="alamat" name="alamat" rows="3" placeholder="jalan, RT/RW, kelurahan/desa, kecamatan, kota"
+              required></textarea>
+
+              <!-- ===== PILIHAN JURUSAN ==== -->
+               <h2>C. pilihan program keahlian</h2>
+
+               <label for="jurusan">pilihan jurusan: *</label>
+               <select id="jurusan" name="jurusan" required>
+                <option value="">-- pilih jurusan --</option>
+                <option value="rpl">Rekayasa Perangkat Lunak (RPL)</option>
+                <option value="tkj">Teknik Komputer & jaringan (TKJ)</option>
+                <option value="mm">multimedia (mm)</option>
+                <option value="akl">akuntansi & keuangan lembaga (AKL)</option>
+            
+                </select>
+                
+                <label>hobi / minat: (boleh lebih dari satu)</label>
+                <div>
+                    <label><input type="checkbox" name="hobi" value="coding">coding / pemrograman</label>
+                    <label><input type="checkbox" name="hobi" value="desain">desain grafis</label>
+                    <label><input type="checkbox" name="hobi" value="jaringan">jaringan komputer</label>
+                    <label><input type="checkbox" name="hobi" value="gaming">gaming</label>
+                    <label><input type="checkbox" name="hobi" value="konten">konten creator</label>
+                </div>
+                <!-- ==== UPLOAD FOTO ==== -->
+                 <h2>D. Dokumen</h2>
+
+                 <label for="foto">foto (jpg/png,maks. 2mb) :</label>
+                 <input type="file" id="foto" name="foto" accept="image/jpeg,image/png">
+
+                 <!-- ==== Sandi ==== -->
+                  <h2>E. buat akun</h2>
+
+                  <label for="sandi =">kata sandi: *</label>
+                  <input type="password" id="sandi" name="sandi" placeholder="minimal 8 karakter" required minlength="8">
+
+                  <label for="konfsandi">konfirmasi kata sandi: *</label>
+                  <input type="password" id="konfsandi" name="konf_sandi" placeholder="ketik ulang kata sandi" required>
+
+                  <!-- ===== PERSETUJUAN ==== -->
+                   <br>
+                   <label>
+                    <input type="checkbox" name="setuju" required>
+                    saya menyatakan bahwa dat yang saya isi adalah benar dan dapat dipertanggungjawabkan.
+                   </label>
+
+                   <!-- ===== Tombol ==== -->
+                    <br>
+                    <button type="submit">kirim pendaftaran</button>
+                    <button type="reset" style="background:#e74c3c; margin-left:10px">reset formulir</button>
+        </from>
+        <br>
+        <p><a href="index.html">kembali ke profil</a></p>
+
+    </body>
+</html>
